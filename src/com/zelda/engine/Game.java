@@ -38,7 +38,7 @@ public class Game extends MainPanel implements Runnable {
 
 		world = new World("/Map_1.png");
 
-		this.player = new Player(32, 32, 16, 16, spritesheet.getSprite(32, 0, 16, 16));
+		this.player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, spritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
 		
 		this.players.add(this.player);
 		

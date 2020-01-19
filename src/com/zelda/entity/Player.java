@@ -12,7 +12,6 @@ import com.zelda.world.World;
 
 public class Player extends Avatar {
 
-	private static final int TILE_SIZE = 16;
 	private boolean right;
 	
 	private boolean left;
@@ -42,10 +41,10 @@ public class Player extends Avatar {
 		this.leftPlayer = new ArrayList<>();
 		
 		for (int i = 0; i < 2; i++)
-			this.rightPlayer.add(Game.spritesheet.getSprite(32 + (i * 16), 0, 16, 16));
+			this.rightPlayer.add(Game.spritesheet.getSprite(World.TILE_SIZE * 2 + (i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
 		
 		for (int i = 0; i < 2; i++)
-			this.leftPlayer.add(Game.spritesheet.getSprite(48 - (i * 16), 16, 16, 16));
+			this.leftPlayer.add(Game.spritesheet.getSprite(World.TILE_SIZE * 3 - (i * World.TILE_SIZE), 16, World.TILE_SIZE, World.TILE_SIZE));
 		
 		this.lastDirection = this.rightPlayer.get(0);
 	}
@@ -81,23 +80,23 @@ public class Player extends Avatar {
 				this.frame = 0;
 		}
 
-		Camera.x = Camera.cameraLimit((int)getX() - (Game.WIDTH / 2), 0, World.WIDTH * 16 - Game.WIDTH);
+		Camera.x = Camera.cameraLimit(getX() - (Game.WIDTH / 2), 0, World.WIDTH * World.TILE_SIZE - Game.WIDTH);
 
-		Camera.y = Camera.cameraLimit((int)getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * 16 - Game.HEIGHT);
+		Camera.y = Camera.cameraLimit(getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * World.TILE_SIZE - Game.HEIGHT);
 	}
 
 	public static boolean isFree(int x, int y) {
-		int firstTestX = x / TILE_SIZE;
-		int firstTestY = y / TILE_SIZE;
+		int firstTestX = x / World.TILE_SIZE;
+		int firstTestY = y / World.TILE_SIZE;
 
-		int secondTestX = (x + TILE_SIZE - 1) / TILE_SIZE;
-		int secondTestY = y / TILE_SIZE;
+		int secondTestX = (x + World.TILE_SIZE - 1) / World.TILE_SIZE;
+		int secondTestY = y / World.TILE_SIZE;
 
-		int thirdTestX = x / TILE_SIZE;
-		int thirdTestY = (y + TILE_SIZE - 1) / TILE_SIZE;
+		int thirdTestX = x / World.TILE_SIZE;
+		int thirdTestY = (y + World.TILE_SIZE - 1) / World.TILE_SIZE;
 
-		int fourthTestX = (x + TILE_SIZE - 1) / TILE_SIZE;
-		int fourthTestY = (y + TILE_SIZE - 1) / TILE_SIZE;
+		int fourthTestX = (x + World.TILE_SIZE - 1) / World.TILE_SIZE;
+		int fourthTestY = (y + World.TILE_SIZE - 1) / World.TILE_SIZE;
 
 		return !(World.tiles[firstTestX + (firstTestY * World.WIDTH)] instanceof Solid ||
 				World.tiles[secondTestX + (secondTestY * World.WIDTH)] instanceof Solid ||
@@ -125,13 +124,13 @@ public class Player extends Avatar {
 	public void Render(Graphics graphic) {
 		if (this.isMoving) {
 			if (this.right)
-				graphic.drawImage(this.rightPlayer.get(this.frame), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
+				graphic.drawImage(this.rightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 			else if (this.left)
-				graphic.drawImage(this.leftPlayer.get(this.frame), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
+				graphic.drawImage(this.leftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 			else
-				graphic.drawImage(this.lastDirection, (int)getX() - Camera.x, (int)getY() - Camera.y, null);
+				graphic.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
 		} else {
-			graphic.drawImage(this.lastDirection, (int)getX() - Camera.x, (int)getY() - Camera.y, null);
+			graphic.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
 		}
 	}
 

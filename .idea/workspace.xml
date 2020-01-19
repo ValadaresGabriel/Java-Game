@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/tile/Solid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Avatar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Avatar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/Tile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/tile/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
