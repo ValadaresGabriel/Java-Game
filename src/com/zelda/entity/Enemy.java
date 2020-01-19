@@ -8,4 +8,9 @@ public class Enemy extends Avatar {
         super(x, y, width, height, sprite);
     }
 
+    @Override
+    public void Update() {
+        //code
+    }
+
 }

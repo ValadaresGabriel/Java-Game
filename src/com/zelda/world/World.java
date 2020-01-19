@@ -1,7 +1,11 @@
 package com.zelda.world;
 
+import com.zelda.engine.Camera;
+import com.zelda.engine.Game;
 import com.zelda.entity.Enemy;
 import com.zelda.entity.Entity;
+import com.zelda.tile.Tile;
+import com.zelda.tile.Solid;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -12,13 +16,15 @@ import java.util.List;
 
 public class World {
 
-	private Tile[] tiles;
+	public static Tile[] tiles;
 
 	private int[] pixels;
 
-	private static int WIDTH;
+	public static int WIDTH;
 
-	private static int HEIGHT;
+	public static int HEIGHT;
+
+	public static final int TILE_SIZE = 16;
 
 	private List<Enemy> enemies = new ArrayList<>();
 	
@@ -30,7 +36,7 @@ public class World {
 			HEIGHT = map.getHeight();
 
 			this.pixels = new int[WIDTH * HEIGHT];
-			this.tiles = new Tile[WIDTH * HEIGHT];
+			tiles = new Tile[WIDTH * HEIGHT];
 
 			map.getRGB(0, 0, WIDTH, HEIGHT, this.pixels, 0, WIDTH);
 
@@ -48,12 +54,12 @@ public class World {
 
 				position = i + (j * WIDTH);
 
-				this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_GRASS);
+				tiles[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_GRASS);
 
 				switch (this.pixels[position]) {
-					case 0xFFFF6A00 -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_FLOOR);
-					case 0xFF7F3300 -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_WALL);
-					case 0xFFFF0000 -> this.enemies.add(new Enemy(i * 16, j * 16, 16, 16, Entity.ENEMY));
+					case 0xFFFF6A00 -> tiles[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_FLOOR);
+					case 0xFF7F3300 -> tiles[position] = new Solid(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_WALL);
+					case 0xFFFF0000 -> this.enemies.add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Entity.ENEMY));
 				}
 				
 			}
@@ -61,10 +67,21 @@ public class World {
 	}
 
 	public void Render(Graphics graphics) {
-		if (this.tiles.length > 0) {
-			for (int i = 0; i < WIDTH; i++) {
-				for (int j = 0; j < HEIGHT; j++) {
-					Tile tile = this.tiles[i + (j * WIDTH)];
+		if (tiles.length > 0) {
+
+			int xStart = Camera.x >> 4;
+			int yStart = Camera.y >> 4;
+
+			int xFinal = xStart + (Game.WIDTH >> 4);
+			int yFinal = yStart + (Game.HEIGHT >> 4);
+
+			for (int i = xStart; i <= xFinal + 2; i++) {
+				for (int j = yStart; j <= yFinal + 2; j++) {
+
+					if (i < 0 || j < 0 || i >= WIDTH || j >= HEIGHT)
+						continue;
+
+					Tile tile = tiles[i + (j * WIDTH)];
 					tile.Render(graphics);
 				}
 			}

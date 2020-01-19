@@ -1,4 +1,4 @@
-package com.zelda.world;
+package com.zelda.tile;
 
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
@@ -8,11 +8,11 @@ import java.awt.image.BufferedImage;
 
 public class Tile {
 
-    protected static final BufferedImage TILE_GRASS = Game.spritesheet.getSprite(0, 0, 16, 16);
+    public static final BufferedImage TILE_GRASS = Game.spritesheet.getSprite(0, 0, 16, 16);
 
-    protected static final BufferedImage TILE_FLOOR = Game.spritesheet.getSprite(16, 0, 16, 16);
+    public static final BufferedImage TILE_FLOOR = Game.spritesheet.getSprite(16, 0, 16, 16);
 
-    protected static final BufferedImage TILE_WALL = Game.spritesheet.getSprite(0, 16, 16, 16);
+    public static final BufferedImage TILE_WALL = Game.spritesheet.getSprite(0, 16, 16, 16);
 
     private BufferedImage sprite;
 

@@ -7,9 +7,12 @@ import java.util.List;
 
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
+import com.zelda.tile.Solid;
+import com.zelda.world.World;
 
 public class Player extends Avatar {
 
+	private static final int TILE_SIZE = 16;
 	private boolean right;
 	
 	private boolean left;
@@ -18,7 +21,7 @@ public class Player extends Avatar {
 	
 	private boolean down;
 	
-	private static final double MOVEMENT_SPEED = 1.0;
+	private static final int MOVEMENT_SPEED = 1;
 	
 	private List<BufferedImage> rightPlayer;
 	
@@ -48,20 +51,20 @@ public class Player extends Avatar {
 	}
 	
 	public void Update() {
-		if (this.right) {
+		if (this.right && isFree(getX() + MOVEMENT_SPEED, getY())) {
 			this.isMoving = true;
 			x += MOVEMENT_SPEED;
 			this.lastDirection = this.rightPlayer.get(0);
-		} else if (this.left) {
+		} else if (this.left && isFree(getX() - MOVEMENT_SPEED, getY())) {
 			this.isMoving = true;
 			x -= MOVEMENT_SPEED;
 			this.lastDirection = this.leftPlayer.get(0);
 		}
 		
-		if (this.up) {
+		if (this.up && isFree(getX(), getY() - MOVEMENT_SPEED)) {
 			this.isMoving = true;
 			y -= MOVEMENT_SPEED;
-		} else if (this.down) {
+		} else if (this.down && isFree(getX(), getY() + MOVEMENT_SPEED)) {
 			this.isMoving = true;
 			y += MOVEMENT_SPEED;
 		}
@@ -78,9 +81,28 @@ public class Player extends Avatar {
 				this.frame = 0;
 		}
 
-		Camera.x = (int)getX() - Game.WIDTH / 2;
+		Camera.x = Camera.cameraLimit((int)getX() - (Game.WIDTH / 2), 0, World.WIDTH * 16 - Game.WIDTH);
 
-		Camera.y = (int)getY() - Game.HEIGHT / 2;
+		Camera.y = Camera.cameraLimit((int)getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * 16 - Game.HEIGHT);
+	}
+
+	public static boolean isFree(int x, int y) {
+		int firstTestX = x / TILE_SIZE;
+		int firstTestY = y / TILE_SIZE;
+
+		int secondTestX = (x + TILE_SIZE - 1) / TILE_SIZE;
+		int secondTestY = y / TILE_SIZE;
+
+		int thirdTestX = x / TILE_SIZE;
+		int thirdTestY = (y + TILE_SIZE - 1) / TILE_SIZE;
+
+		int fourthTestX = (x + TILE_SIZE - 1) / TILE_SIZE;
+		int fourthTestY = (y + TILE_SIZE - 1) / TILE_SIZE;
+
+		return !(World.tiles[firstTestX + (firstTestY * World.WIDTH)] instanceof Solid ||
+				World.tiles[secondTestX + (secondTestY * World.WIDTH)] instanceof Solid ||
+				World.tiles[thirdTestX + (thirdTestY * World.WIDTH)] instanceof Solid ||
+				World.tiles[fourthTestX + (fourthTestY * World.WIDTH)] instanceof Solid);
 	}
 	
 	public void setRight(boolean right) {

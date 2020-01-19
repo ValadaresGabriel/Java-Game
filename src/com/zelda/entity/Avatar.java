@@ -7,9 +7,9 @@ import java.awt.image.BufferedImage;
 
 public class Avatar {
 	
-	protected double x;
+	protected int x;
 	
-	protected double y;
+	protected int y;
 	
 	protected int width;
 	
@@ -33,11 +33,11 @@ public class Avatar {
 		graphics.drawImage(getSprite(), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 	}
 	
-	private void setX(double x) {
+	private void setX(int x) {
 		this.x = x;
 	}
 	
-	private void setY(double y) {
+	private void setY(int y) {
 		this.y = y;
 	}
 	
@@ -53,11 +53,11 @@ public class Avatar {
 		this.sprite = sprite;
 	}
 	
-	public double getX() {
+	public int getX() {
 		return this.x;
 	}
 	
-	public double getY() {
+	public int getY() {
 		return this.y;
 	}
 	
