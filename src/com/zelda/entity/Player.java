@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
 
 public class Player extends Avatar {
@@ -76,6 +77,10 @@ public class Player extends Avatar {
 			if (this.frame == this.rightPlayer.size())
 				this.frame = 0;
 		}
+
+		Camera.x = (int)getX() - Game.WIDTH / 2;
+
+		Camera.y = (int)getY() - Game.HEIGHT / 2;
 	}
 	
 	public void setRight(boolean right) {
@@ -98,13 +103,13 @@ public class Player extends Avatar {
 	public void Render(Graphics graphic) {
 		if (this.isMoving) {
 			if (this.right)
-				graphic.drawImage(this.rightPlayer.get(this.frame), (int)getX(), (int)getY(), null);
+				graphic.drawImage(this.rightPlayer.get(this.frame), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 			else if (this.left)
-				graphic.drawImage(this.leftPlayer.get(this.frame), (int)getX(), (int)getY(), null);
+				graphic.drawImage(this.leftPlayer.get(this.frame), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 			else
-				graphic.drawImage(this.lastDirection, (int)getX(), (int)getY(), null);
+				graphic.drawImage(this.lastDirection, (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 		} else {
-			graphic.drawImage(this.lastDirection, (int)getX(), (int)getY(), null);
+			graphic.drawImage(this.lastDirection, (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 		}
 	}
 

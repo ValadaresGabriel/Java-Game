@@ -1,5 +1,6 @@
 package com.zelda.world;
 
+import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
 
 import java.awt.*;
@@ -26,7 +27,15 @@ public class Tile {
     }
 
     public void Render(Graphics graphics) {
-        graphics.drawImage(this.sprite, this.x, this.y, null);
+        graphics.drawImage(this.sprite, getX() - Camera.x, getY() - Camera.y, null);
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
     }
 
     private void setX(int x) {

@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/engine/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/engine/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zelda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Zelda.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Avatar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Avatar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/panel/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/panel/MainPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/Spritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/spritesheet/Spritesheet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/zelda/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/zelda/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/zelda/Resume.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/zelda/Resume.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,22 +131,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579405350785" />
-    <state width="1323" height="62" key="GridCell.Tab.0.bottom" timestamp="1579405477646">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1579451523592">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579405477646" />
-    <state width="1323" height="62" key="GridCell.Tab.0.center" timestamp="1579405477646">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579451523592" />
+    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1579451523592">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579405477646" />
-    <state width="1323" height="62" key="GridCell.Tab.0.left" timestamp="1579405477646">
+    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579451523592" />
+    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1579451523592">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579405477646" />
-    <state width="1323" height="62" key="GridCell.Tab.0.right" timestamp="1579405477646">
+    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579451523592" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1579451523592">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579405477646" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579451523592" />
     <state x="157" y="0" key="SettingsEditor" timestamp="1579405457041">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

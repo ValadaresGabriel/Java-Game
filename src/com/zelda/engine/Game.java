@@ -20,8 +20,6 @@ public class Game extends MainPanel implements Runnable {
 	
 	private Thread thread;
 	
-	private final double FPS = 60.0;
-	
 	private BufferedImage image;
 	
 	private Player player;
@@ -56,7 +54,7 @@ public class Game extends MainPanel implements Runnable {
 		this.isRunning = false;
 		
 		try {
-			thread.join();
+			this.thread.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -81,7 +79,7 @@ public class Game extends MainPanel implements Runnable {
 
 		world.Render(graphics);
 
-		for (Player value : this.players) value.Render(graphics);
+		for (Player player : this.players) player.Render(graphics);
 
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();
@@ -95,7 +93,8 @@ public class Game extends MainPanel implements Runnable {
 		requestFocus();
 		long lastTime = System.nanoTime();
 		final long nano = 1000000000;
-		double ns = nano / this.FPS;
+		final double FPS = 60.0; //FPS setado
+		double ns = nano / FPS;
 		double delta = 0;
 
 		//debug

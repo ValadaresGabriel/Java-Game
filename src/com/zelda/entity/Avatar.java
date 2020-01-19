@@ -1,5 +1,7 @@
 package com.zelda.entity;
 
+import com.zelda.engine.Camera;
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -22,13 +24,13 @@ public class Avatar {
 		setHeight(height);
 		setSprite(sprite);
 	}
-	
+
 	public void Update() {
 		//
 	}
 	
 	public void Render(Graphics graphics) {
-		graphics.drawImage(getSprite(), (int)getX(), (int)getY(), null);
+		graphics.drawImage(getSprite(), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
 	}
 	
 	private void setX(double x) {
