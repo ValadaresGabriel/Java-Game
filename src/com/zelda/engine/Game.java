@@ -2,8 +2,6 @@ package com.zelda.engine;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ import com.zelda.spritesheet.Spritesheet;
 import com.zelda.world.World;
 import com.zelda.entity.*;
 
-public class Game extends MainPanel implements Runnable, KeyListener {
+public class Game extends MainPanel implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -23,8 +21,6 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 	private Thread thread;
 	
 	private final double FPS = 60.0;
-	
-	private final long nano = 1000000000;
 	
 	private BufferedImage image;
 	
@@ -37,7 +33,7 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 	public static World world;
 	
 	public Game() {
-		addKeyListener(this);
+		new Move(this);
 		this.image = new BufferedImage(Game.WIDTH, Game.HEIGHT, BufferedImage.TYPE_INT_RGB);
 
 		spritesheet = new Spritesheet("/SpriteSheet.png");
@@ -67,8 +63,7 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 	}
 	
 	private void Update() {
-		for (int i = 0; i < this.players.size(); i++)
-			this.players.get(i).Update();
+		for (Player value : this.players) value.Update();
 	}
 	
 	private void Render() {
@@ -85,9 +80,8 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 		graphics.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
 
 		world.Render(graphics);
-		
-		for (int i = 0; i < this.players.size(); i++)
-			this.players.get(i).Render(graphics);
+
+		for (Player value : this.players) value.Render(graphics);
 
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();
@@ -100,25 +94,26 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 	public void run() {
 		requestFocus();
 		long lastTime = System.nanoTime();
-		double ns = this.nano / this.FPS;
+		final long nano = 1000000000;
+		double ns = nano / this.FPS;
 		double delta = 0;
-		
+
 		//debug
 		int frames = 0;
 		double timer = System.currentTimeMillis();
-		
+
 		while (this.isRunning) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
 			lastTime = now;
-			
+
 			if (delta >= 1) {
 				Update();
 				Render();
 				frames++;
 				delta--;
 			}
-			
+
 			//debug
 			if (System.currentTimeMillis() - timer >= 1000) {
 				System.out.println("FPS: " + frames);
@@ -130,37 +125,8 @@ public class Game extends MainPanel implements Runnable, KeyListener {
 		Stop();
 	}
 
-	@Override
-	public void keyPressed(KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.VK_RIGHT)
-			this.player.setRight(true);
-		else if (event.getKeyCode() == KeyEvent.VK_LEFT)
-			this.player.setLeft(true);
-		
-		if (event.getKeyCode() == KeyEvent.VK_UP)
-			this.player.setUp(true);
-		else if (event.getKeyCode() == KeyEvent.VK_DOWN)
-			this.player.setDown(true);
-	}
-
-	@Override
-	public void keyReleased(KeyEvent event) {
-		this.player.isMoving = false;
-		if (event.getKeyCode() == KeyEvent.VK_RIGHT)
-			this.player.setRight(false);
-		else if (event.getKeyCode() == KeyEvent.VK_LEFT)
-			this.player.setLeft(false);
-		
-		if (event.getKeyCode() == KeyEvent.VK_UP)
-			this.player.setUp(false);
-		else if (event.getKeyCode() == KeyEvent.VK_DOWN)
-			this.player.setDown(false);
-	}
-
-	@Override
-	public void keyTyped(KeyEvent event) {
-		// TODO Auto-generated method stub
-		
+	public Player getPlayer() {
+		return this.player;
 	}
 
 }

@@ -10,7 +10,7 @@ public class World {
 
 	private Tile[] tiles;
 
-	private int pixels[];
+	private int[] pixels;
 
 	private static int WIDTH;
 
@@ -43,17 +43,10 @@ public class World {
 				position = i + (j * WIDTH);
 
 				switch (this.pixels[position]) {
-					case 0xFF007C10:
-						this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_GRASS);
-						break;
-					case 0xFFFF6A00:
-						this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_FLOOR);
-						break;
-					case 0xFF7F3300:
-						this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_WALL);
-						break;
-					default:
-						this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_GRASS);
+					//case 0xFF007C10 -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_GRASS);
+					case 0xFFFF6A00 -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_FLOOR);
+					case 0xFF7F3300 -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_WALL);
+					default -> this.tiles[position] = new Tile(i * 16, j * 16, Tile.TILE_GRASS);
 				}
 				
 			}
