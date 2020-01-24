@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class MainPanel extends Canvas {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private static JFrame frame;
 	
 	public static final int WIDTH = 250;
@@ -19,7 +19,7 @@ public class MainPanel extends Canvas {
 	
 	public MainPanel() {
 		
-		setPreferredSize(new Dimension(MainPanel.WIDTH * MainPanel.SCALE, MainPanel.HEIGHT * MainPanel.SCALE));
+		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		frame = new JFrame("Zelda");
 		frame.add(this);
 		frame.setResizable(false);

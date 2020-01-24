@@ -4,13 +4,12 @@ import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
 import com.zelda.entity.Enemy;
 import com.zelda.entity.Entity;
+import com.zelda.spritesheet.Spritesheet;
 import com.zelda.tile.Tile;
 import com.zelda.tile.Solid;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,21 +28,17 @@ public class World {
 	private List<Enemy> enemies = new ArrayList<>();
 	
 	public World(String path) {
-		try {
-			BufferedImage map = ImageIO.read(getClass().getResource(path));
+		BufferedImage map = new Spritesheet(path).getBufferedImage();
 
-			WIDTH = map.getWidth();
-			HEIGHT = map.getHeight();
+		WIDTH = map.getWidth();
+		HEIGHT = map.getHeight();
 
-			this.pixels = new int[WIDTH * HEIGHT];
-			tiles = new Tile[WIDTH * HEIGHT];
+		this.pixels = new int[WIDTH * HEIGHT];
+		this.tiles = new Tile[WIDTH * HEIGHT];
 
-			map.getRGB(0, 0, WIDTH, HEIGHT, this.pixels, 0, WIDTH);
+		map.getRGB(0, 0, WIDTH, HEIGHT, this.pixels, 0, WIDTH);
 
-			getMapProperties();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		getMapProperties();
 	}
 	
 	private void getMapProperties() {
@@ -54,20 +49,28 @@ public class World {
 
 				position = i + (j * WIDTH);
 
-				tiles[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_GRASS);
+				getTiles()[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_GRASS);
 
 				switch (this.pixels[position]) {
-					case 0xFFFF6A00 -> tiles[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_FLOOR);
-					case 0xFF7F3300 -> tiles[position] = new Solid(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_WALL);
-					case 0xFFFF0000 -> this.enemies.add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Entity.ENEMY));
+					case 0xFFFF6A00 -> getTiles()[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_FLOOR);
+					case 0xFF7F3300 -> getTiles()[position] = new Solid(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_WALL);
+					case 0xFFFF0000 -> getEnemies().add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Entity.ENEMY));
 				}
 				
 			}
 		}
 	}
 
+	public Tile[] getTiles() {
+		return this.tiles;
+	}
+
+	public List<Enemy> getEnemies() {
+		return this.enemies;
+	}
+
 	public void Render(Graphics graphics) {
-		if (tiles.length > 0) {
+		if (getTiles().length > 0) {
 
 			int xStart = Camera.x >> 4;
 			int yStart = Camera.y >> 4;
@@ -81,14 +84,14 @@ public class World {
 					if (i < 0 || j < 0 || i >= WIDTH || j >= HEIGHT)
 						continue;
 
-					Tile tile = tiles[i + (j * WIDTH)];
+					Tile tile = getTiles()[i + (j * WIDTH)];
 					tile.Render(graphics);
 				}
 			}
 		}
 
-		if (this.enemies.size() > 0)
-			for (Enemy enemy : this.enemies) enemy.Render(graphics);
+		if (getEnemies().size() > 0)
+			for (Enemy enemy : getEnemies()) enemy.Render(graphics);
 	}
 
 }

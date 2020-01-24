@@ -22,7 +22,7 @@ public class Game extends MainPanel implements Runnable {
 	
 	private BufferedImage image;
 	
-	private Player player;
+	public static Player player;
 	
 	private List<Player> players = new ArrayList<>();
 	
@@ -32,15 +32,15 @@ public class Game extends MainPanel implements Runnable {
 	
 	public Game() {
 		new Move(this);
-		this.image = new BufferedImage(Game.WIDTH, Game.HEIGHT, BufferedImage.TYPE_INT_RGB);
+		this.image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
 		spritesheet = new Spritesheet("/SpriteSheet.png");
 
 		world = new World("/Map_1.png");
 
-		this.player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, spritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
+		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, spritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
 		
-		this.players.add(this.player);
+		this.players.add(getPlayer());
 		
 		Start();
 	}
@@ -61,7 +61,9 @@ public class Game extends MainPanel implements Runnable {
 	}
 	
 	private void Update() {
-		for (Player value : this.players) value.Update();
+		for (Player player : this.players) player.Update();
+
+		for (Enemy enemy : world.getEnemies()) enemy.Update();
 	}
 	
 	private void Render() {
@@ -75,7 +77,7 @@ public class Game extends MainPanel implements Runnable {
 		Graphics graphics = this.image.getGraphics();
 
 		graphics.setColor(new Color(40, 40, 40));
-		graphics.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+		graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
 		world.Render(graphics);
 
@@ -83,7 +85,7 @@ public class Game extends MainPanel implements Runnable {
 
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();
-		graphics.drawImage(this.image, 0, 0, Game.WIDTH * Game.SCALE, Game.HEIGHT * Game.SCALE, null);
+		graphics.drawImage(this.image, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
 		
 		bufferStrategy.show();
 	}
@@ -124,8 +126,8 @@ public class Game extends MainPanel implements Runnable {
 		Stop();
 	}
 
-	public Player getPlayer() {
-		return this.player;
+	public static Player getPlayer() {
+		return player;
 	}
 
 }

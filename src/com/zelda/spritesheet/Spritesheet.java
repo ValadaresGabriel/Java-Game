@@ -16,6 +16,10 @@ public class Spritesheet {
 			e.printStackTrace();
 		}
 	}
+
+	public BufferedImage getBufferedImage() {
+		return this.sprite;
+	}
 	
 	public BufferedImage getSprite(int x, int y, int width, int height) {
 		return this.sprite.getSubimage(x, y, width, height);

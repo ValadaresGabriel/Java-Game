@@ -2,17 +2,18 @@ package com.zelda.tile;
 
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
+import com.zelda.world.World;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Tile {
 
-    public static final BufferedImage TILE_GRASS = Game.spritesheet.getSprite(0, 0, 16, 16);
+    public static final BufferedImage TILE_GRASS = Game.spritesheet.getSprite(0, 0, World.TILE_SIZE, World.TILE_SIZE);
 
-    public static final BufferedImage TILE_FLOOR = Game.spritesheet.getSprite(16, 0, 16, 16);
+    public static final BufferedImage TILE_FLOOR = Game.spritesheet.getSprite(16, 0, World.TILE_SIZE, World.TILE_SIZE);
 
-    public static final BufferedImage TILE_WALL = Game.spritesheet.getSprite(0, 16, 16, 16);
+    public static final BufferedImage TILE_WALL = Game.spritesheet.getSprite(0, 16, World.TILE_SIZE, World.TILE_SIZE);
 
     private BufferedImage sprite;
 

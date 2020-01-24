@@ -30,13 +30,13 @@ public class Avatar {
 	}
 	
 	public void Render(Graphics graphics) {
-		graphics.drawImage(getSprite(), (int)getX() - Camera.x, (int)getY() - Camera.y, null);
+		graphics.drawImage(getSprite(), getX() - Camera.x, getY() - Camera.y, null);
 	}
-	
+
 	private void setX(int x) {
 		this.x = x;
 	}
-	
+
 	private void setY(int y) {
 		this.y = y;
 	}
