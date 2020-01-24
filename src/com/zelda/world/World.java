@@ -15,7 +15,7 @@ import java.util.List;
 
 public class World {
 
-	public static Tile[] tiles;
+	private Tile[] tiles;
 
 	private int[] pixels;
 
@@ -34,7 +34,7 @@ public class World {
 		HEIGHT = map.getHeight();
 
 		this.pixels = new int[WIDTH * HEIGHT];
-		this.tiles = new Tile[WIDTH * HEIGHT];
+		tiles = new Tile[WIDTH * HEIGHT];
 
 		map.getRGB(0, 0, WIDTH, HEIGHT, this.pixels, 0, WIDTH);
 
@@ -62,7 +62,7 @@ public class World {
 	}
 
 	public Tile[] getTiles() {
-		return this.tiles;
+		return tiles;
 	}
 
 	public List<Enemy> getEnemies() {

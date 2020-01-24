@@ -15,14 +15,23 @@ public class Enemy extends Avatar {
 
     @Override
     public void Update() {
-        if (getX() < Game.getPlayer().getX() && Collision.isFree(getX() + MOVEMENT_SPEED, getY()))
+        int firstCollision = getX() + MOVEMENT_SPEED;
+        int secondCollision = getX() - MOVEMENT_SPEED;
+        int thirdCollision = getY() + MOVEMENT_SPEED;
+        int fourthCollision = getY() - MOVEMENT_SPEED;
+
+        if (getX() < Game.getPlayer().getX() &&Collision.isFree(firstCollision, getY()) &&
+                Collision.isEnemyFree(this, firstCollision, getY()))
             this.x += MOVEMENT_SPEED;
-        else if (getX() > Game.getPlayer().getX() && Collision.isFree(getX() - MOVEMENT_SPEED, getY()))
+        else if (getX() > Game.getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&
+                Collision.isEnemyFree(this, secondCollision, getY()))
             this.x -= MOVEMENT_SPEED;
 
-        if (getY() < Game.getPlayer().getY() && Collision.isFree(getX(), getY() + MOVEMENT_SPEED))
+        if (getY() < Game.getPlayer().getY() && Collision.isFree(getX(), thirdCollision) &&
+                Collision.isEnemyFree(this, getX(), thirdCollision))
             this.y += MOVEMENT_SPEED;
-        else if (getY() > Game.getPlayer().getY() && Collision.isFree(getX(), getY() - MOVEMENT_SPEED))
+        else if (getY() > Game.getPlayer().getY() && Collision.isFree(getX(), fourthCollision) &&
+                Collision.isEnemyFree(this, getX(), fourthCollision))
             this.y -= MOVEMENT_SPEED;
     }
 

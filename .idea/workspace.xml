@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Collide.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/Spritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/spritesheet/Spritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/tile/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/tile/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/panel/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/panel/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/spritesheet/Spritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/spritesheet/Spritesheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/tile/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,30 +125,30 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579405350785" />
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1579828181753">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1579885656176">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579828181753" />
-    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1579828181753">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579885656176" />
+    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1579885656175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579828181753" />
-    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1579828181753">
+    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579885656175" />
+    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1579885656175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579828181753" />
-    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1579828181753">
+    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579885656175" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1579885656175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579828181753" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579885656175" />
     <state x="157" y="0" key="SettingsEditor" timestamp="1579405457041">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="157" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579405457041" />
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1579823224773">
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1579866073020">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579823224773" />
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579866073020" />
     <state x="65" y="5" key="new project wizard" timestamp="1579649652454">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

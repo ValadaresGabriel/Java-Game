@@ -51,6 +51,7 @@ public class Player extends Avatar {
 	}
 	
 	public void Update() {
+		System.out.println(getX());
 		if (this.right && Collision.isFree(getX() + MOVEMENT_SPEED, getY())) {
 			this.isMoving = true;
 			x += MOVEMENT_SPEED;
