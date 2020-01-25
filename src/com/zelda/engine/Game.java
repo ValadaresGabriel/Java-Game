@@ -89,6 +89,8 @@ public class Game extends MainPanel implements Runnable {
 
 		for (Player player : this.players) player.Render(graphics);
 
+		for (Enemy enemy : world.getEnemies()) enemy.Render(graphics);
+
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();
 		graphics.drawImage(this.image, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);

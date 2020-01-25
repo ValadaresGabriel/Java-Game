@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
-import com.zelda.spritesheet.WorldSpritesheet;
 import com.zelda.world.World;
 
 import com.zelda.engine.Collision;
@@ -90,6 +89,14 @@ public class Player extends Avatar {
 		Camera.x = Camera.cameraLimit(getX() - (Game.WIDTH / 2), 0, World.WIDTH * World.TILE_SIZE - Game.WIDTH);
 
 		Camera.y = Camera.cameraLimit(getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * World.TILE_SIZE - Game.HEIGHT);
+	}
+
+	public boolean isRight() {
+		return this.right;
+	}
+
+	public boolean isLeft() {
+		return this.left;
 	}
 	
 	public void setRight(boolean right) {
