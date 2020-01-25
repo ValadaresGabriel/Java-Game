@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zelda.panel.MainPanel;
-import com.zelda.spritesheet.Spritesheet;
+import com.zelda.spritesheet.EnemySpritesheet;
+import com.zelda.spritesheet.WorldSpritesheet;
 import com.zelda.world.World;
 import com.zelda.entity.*;
 
@@ -25,8 +26,10 @@ public class Game extends MainPanel implements Runnable {
 	public static Player player;
 	
 	private List<Player> players = new ArrayList<>();
-	
-	public static Spritesheet spritesheet;
+
+	public static WorldSpritesheet worldSpritesheet;
+
+	public static EnemySpritesheet enemySpritesheet;
 	
 	public static World world;
 	
@@ -34,11 +37,13 @@ public class Game extends MainPanel implements Runnable {
 		new Move(this);
 		this.image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
-		spritesheet = new Spritesheet("/SpriteSheet.png");
+		worldSpritesheet = new WorldSpritesheet("/SpriteSheet.png");
+
+		enemySpritesheet = new EnemySpritesheet("/EnemySpriteSheet.png");
 
 		world = new World("/Map_1.png");
 
-		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, spritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
+		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, worldSpritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
 		
 		this.players.add(getPlayer());
 		

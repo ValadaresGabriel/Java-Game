@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
+import com.zelda.spritesheet.WorldSpritesheet;
 import com.zelda.world.World;
 
 import com.zelda.engine.Collision;
@@ -42,30 +43,34 @@ public class Player extends Avatar {
 		this.leftPlayer = new ArrayList<>();
 		
 		for (int i = 0; i < 2; i++)
-			this.rightPlayer.add(Game.spritesheet.getSprite(World.TILE_SIZE * 2 + (i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
+			this.rightPlayer.add(Game.worldSpritesheet.getSprite(World.TILE_SIZE * 2 + (i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
 		
 		for (int i = 0; i < 2; i++)
-			this.leftPlayer.add(Game.spritesheet.getSprite(World.TILE_SIZE * 3 - (i * World.TILE_SIZE), 16, World.TILE_SIZE, World.TILE_SIZE));
+			this.leftPlayer.add(Game.worldSpritesheet.getSprite(World.TILE_SIZE * 3 - (i * World.TILE_SIZE), 16, World.TILE_SIZE, World.TILE_SIZE));
 		
 		this.lastDirection = this.rightPlayer.get(0);
 	}
 	
 	public void Update() {
-		System.out.println(getX());
-		if (this.right && Collision.isFree(getX() + MOVEMENT_SPEED, getY())) {
+		int firstCollision = getX() + MOVEMENT_SPEED;
+		int secondCollision = getX() - MOVEMENT_SPEED;
+		int thirdCollision = getY() + MOVEMENT_SPEED;
+		int fourthCollision = getY() - MOVEMENT_SPEED;
+
+		if (this.right && Collision.isFree(firstCollision, getY())) {
 			this.isMoving = true;
 			x += MOVEMENT_SPEED;
 			this.lastDirection = this.rightPlayer.get(0);
-		} else if (this.left && Collision.isFree(getX() - MOVEMENT_SPEED, getY())) {
+		} else if (this.left && Collision.isFree(secondCollision, getY())) {
 			this.isMoving = true;
 			x -= MOVEMENT_SPEED;
 			this.lastDirection = this.leftPlayer.get(0);
 		}
 		
-		if (this.up && Collision.isFree(getX(), getY() - MOVEMENT_SPEED)) {
+		if (this.up && Collision.isFree(getX(), thirdCollision)) {
 			this.isMoving = true;
 			y -= MOVEMENT_SPEED;
-		} else if (this.down && Collision.isFree(getX(), getY() + MOVEMENT_SPEED)) {
+		} else if (this.down && Collision.isFree(getX(), fourthCollision)) {
 			this.isMoving = true;
 			y += MOVEMENT_SPEED;
 		}

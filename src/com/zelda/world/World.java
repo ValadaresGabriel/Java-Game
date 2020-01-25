@@ -3,7 +3,9 @@ package com.zelda.world;
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
 import com.zelda.entity.Enemy;
+import com.zelda.entity.EnemyEntity;
 import com.zelda.entity.Entity;
+import com.zelda.spritesheet.MapSpritesheet;
 import com.zelda.spritesheet.Spritesheet;
 import com.zelda.tile.Tile;
 import com.zelda.tile.Solid;
@@ -28,7 +30,7 @@ public class World {
 	private List<Enemy> enemies = new ArrayList<>();
 	
 	public World(String path) {
-		BufferedImage map = new Spritesheet(path).getBufferedImage();
+		BufferedImage map = new MapSpritesheet(path).getBufferedImage();
 
 		WIDTH = map.getWidth();
 		HEIGHT = map.getHeight();
@@ -54,7 +56,7 @@ public class World {
 				switch (this.pixels[position]) {
 					case 0xFFFF6A00 -> getTiles()[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_FLOOR);
 					case 0xFF7F3300 -> getTiles()[position] = new Solid(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_WALL);
-					case 0xFFFF0000 -> getEnemies().add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Entity.ENEMY));
+					case 0xFFFF0000 -> getEnemies().add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, EnemyEntity.ENEMY));
 				}
 				
 			}

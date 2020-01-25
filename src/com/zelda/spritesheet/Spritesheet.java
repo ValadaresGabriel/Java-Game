@@ -5,24 +5,24 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Spritesheet {
-	
+public abstract class Spritesheet {
+
 	private BufferedImage sprite;
 	
 	public Spritesheet(String path) {
 		try {
-			this.sprite = ImageIO.read(getClass().getResource(path));
+			sprite = ImageIO.read(getClass().getResource(path));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public BufferedImage getBufferedImage() {
-		return this.sprite;
+		return sprite;
 	}
 	
 	public BufferedImage getSprite(int x, int y, int width, int height) {
-		return this.sprite.getSubimage(x, y, width, height);
+		return sprite.getSubimage(x, y, width, height);
 	}
 
 }
