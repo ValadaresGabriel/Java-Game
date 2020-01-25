@@ -54,8 +54,8 @@ public class Player extends Avatar {
 	public void Update() {
 		int firstCollision = getX() + MOVEMENT_SPEED;
 		int secondCollision = getX() - MOVEMENT_SPEED;
-		int thirdCollision = getY() + MOVEMENT_SPEED;
-		int fourthCollision = getY() - MOVEMENT_SPEED;
+		int thirdCollision = getY() - MOVEMENT_SPEED;
+		int fourthCollision = getY() + MOVEMENT_SPEED;
 
 		if (this.right && Collision.isFree(firstCollision, getY())) {
 			this.isMoving = true;

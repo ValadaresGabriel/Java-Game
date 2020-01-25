@@ -20,7 +20,7 @@ public class Enemy extends Avatar {
         int thirdCollision = getY() + MOVEMENT_SPEED;
         int fourthCollision = getY() - MOVEMENT_SPEED;
 
-        if (getX() < Game.getPlayer().getX() &&Collision.isFree(firstCollision, getY()) &&
+        if (getX() < Game.getPlayer().getX() && Collision.isFree(firstCollision, getY()) &&
                 Collision.isEnemyFree(this, firstCollision, getY()))
             this.x += MOVEMENT_SPEED;
         else if (getX() > Game.getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&

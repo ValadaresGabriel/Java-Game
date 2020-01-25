@@ -35,6 +35,7 @@ public class Game extends MainPanel implements Runnable {
 	
 	public Game() {
 		new Move(this);
+
 		this.image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
 		worldSpritesheet = new WorldSpritesheet("/SpriteSheet.png");

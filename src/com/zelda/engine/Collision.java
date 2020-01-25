@@ -2,6 +2,7 @@ package com.zelda.engine;
 
 import com.zelda.entity.Enemy;
 import com.zelda.tile.Solid;
+import com.zelda.tile.Tile;
 import com.zelda.world.World;
 
 import java.awt.*;
@@ -13,6 +14,8 @@ public class Collision {
     }
 
     public static boolean isFree(int x, int y) {
+        Tile[] tiles = Game.world.getTiles();
+
         int firstTestX = x / World.TILE_SIZE;
         int firstTestY = y / World.TILE_SIZE;
 
@@ -31,10 +34,10 @@ public class Collision {
                 simulate(fourthTestX + (fourthTestY * World.WIDTH)))
             return false;
 
-        return !(Game.world.getTiles()[firstTestX + (firstTestY * World.WIDTH)] instanceof Solid ||
-                Game.world.getTiles()[secondTestX + (secondTestY * World.WIDTH)] instanceof Solid ||
-                Game.world.getTiles()[thirdTestX + (thirdTestY * World.WIDTH)] instanceof Solid ||
-                Game.world.getTiles()[fourthTestX + (fourthTestY * World.WIDTH)] instanceof Solid);
+        return !(tiles[firstTestX + (firstTestY * World.WIDTH)] instanceof Solid ||
+                tiles[secondTestX + (secondTestY * World.WIDTH)] instanceof Solid ||
+                tiles[thirdTestX + (thirdTestY * World.WIDTH)] instanceof Solid ||
+                tiles[fourthTestX + (fourthTestY * World.WIDTH)] instanceof Solid);
     }
 
     public static boolean isEnemyFree(Enemy cEnemy, int x, int y) {

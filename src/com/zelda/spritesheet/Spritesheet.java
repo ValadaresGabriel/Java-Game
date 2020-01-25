@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public abstract class Spritesheet {
+public class Spritesheet {
 
 	private BufferedImage sprite;
 	
