@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zelda.panel.MainPanel;
+import com.zelda.panel.Ui;
 import com.zelda.spritesheet.EnemySpritesheet;
 import com.zelda.spritesheet.WorldSpritesheet;
 import com.zelda.world.World;
@@ -30,6 +31,8 @@ public class Game extends MainPanel implements Runnable {
 	public static WorldSpritesheet worldSpritesheet;
 
 	public static EnemySpritesheet enemySpritesheet;
+
+	private Ui ui;
 	
 	public static World world;
 	
@@ -43,6 +46,8 @@ public class Game extends MainPanel implements Runnable {
 		enemySpritesheet = new EnemySpritesheet("/EnemySpriteSheet.png");
 
 		world = new World("/Map_1.png");
+
+		this.ui = new Ui();
 
 		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, worldSpritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
 		
@@ -90,6 +95,8 @@ public class Game extends MainPanel implements Runnable {
 		for (Player player : this.players) player.Render(graphics);
 
 		for (Enemy enemy : world.getEnemies()) enemy.Render(graphics);
+
+		this.ui.Render(graphics);
 
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();

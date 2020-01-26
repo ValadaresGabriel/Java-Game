@@ -6,9 +6,9 @@ import java.awt.image.BufferedImage;
 
 public class EnemyStats {
 
-    private int life;
+    private double life;
 
-    private int mana;
+    private double mana;
 
     private int strength;
 
@@ -23,11 +23,11 @@ public class EnemyStats {
         setStrength(10);
     }
 
-    private void setLife(int life) {
+    private void setLife(double life) {
         this.life = life;
     }
 
-    private void setMana(int mana) {
+    private void setMana(double mana) {
         this.mana = mana;
     }
 
@@ -35,11 +35,11 @@ public class EnemyStats {
         this.strength = strength;
     }
 
-    public int getLife() {
+    public double getLife() {
         return this.life;
     }
 
-    public int getMana() {
+    public double getMana() {
         return this.mana;
     }
 
