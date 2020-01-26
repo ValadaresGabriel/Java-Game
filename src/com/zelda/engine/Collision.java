@@ -1,6 +1,8 @@
 package com.zelda.engine;
 
 import com.zelda.entity.Enemy;
+import com.zelda.entity.Item;
+import com.zelda.entity.items.ItemValidity;
 import com.zelda.tile.Solid;
 import com.zelda.tile.Tile;
 import com.zelda.world.World;
@@ -62,6 +64,24 @@ public class Collision {
         }
 
         return true;
+    }
+
+    public static boolean isCollidingItems(Item cItem) {
+        Rectangle item = new Rectangle(cItem.getX(), cItem.getY(), World.TILE_SIZE - 3, World.TILE_SIZE);
+        Rectangle player = new Rectangle(Game.getPlayer().getX(), Game.getPlayer().getY(), World.TILE_SIZE - 3, World.TILE_SIZE);
+
+        return item.intersects(player);
+    }
+
+    public static void gettingItems() {
+        for (Item item : Game.world.getItems()) {
+            if (item != null) {
+                if (isCollidingItems(item)) {
+                    ItemValidity.validatingItem(item);
+                    return;
+                }
+            }
+        }
     }
 
 }

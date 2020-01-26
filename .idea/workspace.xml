@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/panel/Ui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/ItemValidity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/LifePack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/Sword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Map_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SpriteSheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SpriteSheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Collision.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Collision.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/stats/EnemyStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/stats/EnemyStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Map_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/SpriteSheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/SpriteSheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/stats/EnemyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/stats/EnemyStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,30 +139,30 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="263" y="40" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1366.768@0.0.1366.768" timestamp="1579404277968" />
-    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579915825993">
+    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580041165491">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1579915825993" />
+    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1580041165491" />
     <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1579405350785">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579405350785" />
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1580031488117">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1580061567144">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580031488117" />
-    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1580031488117">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580061567144" />
+    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1580061567143">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580031488117" />
-    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1580031488117">
+    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580061567143" />
+    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1580061567143">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580031488117" />
-    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1580031488117">
+    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580061567143" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1580061567144">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580031488117" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580061567144" />
     <state x="157" y="0" key="SettingsEditor" timestamp="1579405457041">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -164,9 +175,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="65" y="5" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1579649652454" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579917119147">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580060661078">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1579917119147" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1580060661078" />
   </component>
 </project>

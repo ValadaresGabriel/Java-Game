@@ -43,13 +43,13 @@ public class Game extends MainPanel implements Runnable {
 
 		worldSpritesheet = new WorldSpritesheet("/SpriteSheet.png");
 
+		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, worldSpritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
+
 		enemySpritesheet = new EnemySpritesheet("/EnemySpriteSheet.png");
 
 		world = new World("/Map_1.png");
 
 		this.ui = new Ui();
-
-		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, worldSpritesheet.getSprite(World.TILE_SIZE * 2, 0, World.TILE_SIZE, World.TILE_SIZE));
 		
 		this.players.add(getPlayer());
 		
@@ -95,6 +95,8 @@ public class Game extends MainPanel implements Runnable {
 		for (Player player : this.players) player.Render(graphics);
 
 		for (Enemy enemy : world.getEnemies()) enemy.Render(graphics);
+
+		for (Item item : world.getItems()) item.Render(graphics);
 
 		this.ui.Render(graphics);
 

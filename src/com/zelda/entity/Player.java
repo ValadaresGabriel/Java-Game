@@ -26,12 +26,20 @@ public class Player extends Avatar {
 	private List<BufferedImage> rightPlayer;
 	
 	private List<BufferedImage> leftPlayer;
+
+	private final BufferedImage damagedPlayer = Game.worldSpritesheet.getSprite(World.TILE_SIZE, World.TILE_SIZE, World.TILE_SIZE, World.TILE_SIZE);
 	
 	private int frame = 0;
 	
 	private int delay = 0;
+
+	private int damageFrame = 0;
+
+	private int damageDelay = 0;
 	
 	public boolean isMoving;
+
+	public boolean isDamaged;
 	
 	private BufferedImage lastDirection; //Right = true / Left = false
 
@@ -90,12 +98,33 @@ public class Player extends Avatar {
 				this.frame = 0;
 		}
 
+		if (this.isDamaged) {
+			this.damageDelay++;
+
+			if (this.damageDelay == 8) {
+				this.isDamaged = false;
+				this.damageDelay = 0;
+				this.damageFrame = 0;
+			}
+		}
+
+		Collision.gettingItems();
+
 		Camera.x = Camera.cameraLimit(getX() - (Game.WIDTH / 2), 0, World.WIDTH * World.TILE_SIZE - Game.WIDTH);
 
 		Camera.y = Camera.cameraLimit(getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * World.TILE_SIZE - Game.HEIGHT);
 	}
 
+	public double getLife() {
+		return this.life;
+	}
+
+	public double getMaxLife() {
+		return this.maxLife;
+	}
+
 	public void reduceLife(double life) {
+		this.isDamaged = true;
 		this.life -= life;
 	}
 
@@ -109,6 +138,14 @@ public class Player extends Avatar {
 
 	public boolean isLeft() {
 		return this.left;
+	}
+
+	public void setLife(double life) {
+		this.life = life;
+	}
+
+	public void setMaxLife(double maxLife) {
+		this.maxLife = maxLife;
 	}
 	
 	public void setRight(boolean right) {
@@ -128,16 +165,20 @@ public class Player extends Avatar {
 	}
 	
 	@Override
-	public void Render(Graphics graphic) {
-		if (this.isMoving) {
-			if (this.right)
-				graphic.drawImage(this.rightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
-			else if (this.left)
-				graphic.drawImage(this.leftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
-			else
-				graphic.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+	public void Render(Graphics graphics) {
+		if (!this.isDamaged) {
+			if (this.isMoving) {
+				if (isRight())
+					graphics.drawImage(this.rightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
+				else if (isLeft())
+					graphics.drawImage(this.leftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
+				else
+					graphics.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+			} else {
+				graphics.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+			}
 		} else {
-			graphic.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+			graphics.drawImage(this.damagedPlayer, getX() - Camera.x, getY() - Camera.y, null);
 		}
 	}
 

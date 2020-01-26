@@ -3,7 +3,10 @@ package com.zelda.world;
 import com.zelda.engine.Camera;
 import com.zelda.engine.Game;
 import com.zelda.entity.Enemy;
+import com.zelda.entity.Entity;
+import com.zelda.entity.Item;
 import com.zelda.entity.enemies.Enemies;
+import com.zelda.entity.items.LifePack;
 import com.zelda.spritesheet.MapSpritesheet;
 import com.zelda.tile.Tile;
 import com.zelda.tile.Solid;
@@ -26,6 +29,8 @@ public class World {
 	public static final int TILE_SIZE = 16;
 
 	private List<Enemy> enemies = new ArrayList<>();
+
+	private List<Item> items = new ArrayList<>();
 
 	private String mapSource;
 	
@@ -58,6 +63,7 @@ public class World {
 				switch (this.pixels[position]) {
 					case 0xFFFF6A00 -> getTiles()[position] = new Tile(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_FLOOR);
 					case 0xFF7F3300 -> getTiles()[position] = new Solid(i * TILE_SIZE, j * TILE_SIZE, Tile.TILE_WALL);
+					case 0xFF00FF21 -> this.items.add(new LifePack(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Entity.LIFE_PACK));
 					case 0xFFFF0000 -> getEnemies().add(new Enemy(i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE, Enemies.getEnemyByMap(this.mapSource)));
 				}
 
@@ -71,6 +77,10 @@ public class World {
 
 	public List<Enemy> getEnemies() {
 		return this.enemies;
+	}
+
+	public List<Item> getItems() {
+		return this.items;
 	}
 
 	public void Render(Graphics graphics) {

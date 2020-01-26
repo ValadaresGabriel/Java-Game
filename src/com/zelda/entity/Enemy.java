@@ -33,6 +33,8 @@ public class Enemy extends Avatar {
 
     private EnemyStats enemyStats;
 
+    private static final Player player = Game.getPlayer();
+
     public Enemy(int x, int y, int width, int height, BufferedImage sprite) {
         super(x, y, width, height, sprite);
 
@@ -79,7 +81,7 @@ public class Enemy extends Avatar {
                     Collision.isEnemyFree(this, getX(), fourthCollision))
                 this.y -= MOVEMENT_SPEED;
         } else {
-            Game.getPlayer().reduceLife(getEnemyStats().getStrength());
+            player.reduceLife(getEnemyStats().getStrength());
         }
 
         this.delay++;
