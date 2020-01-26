@@ -34,6 +34,8 @@ public class Player extends Avatar {
 	public boolean isMoving;
 	
 	private BufferedImage lastDirection; //Right = true / Left = false
+
+	public int life = 100;
 	
 	public Player(int x, int y, int width, int height, BufferedImage sprite) {
 		super(x, y, width, height, sprite);
@@ -89,6 +91,14 @@ public class Player extends Avatar {
 		Camera.x = Camera.cameraLimit(getX() - (Game.WIDTH / 2), 0, World.WIDTH * World.TILE_SIZE - Game.WIDTH);
 
 		Camera.y = Camera.cameraLimit(getY() - (Game.HEIGHT / 2), 0, World.HEIGHT * World.TILE_SIZE - Game.HEIGHT);
+	}
+
+	public void reduceLife(int life) {
+		this.life -= life;
+	}
+
+	public void addLife(int life) {
+		this.life += life;
 	}
 
 	public boolean isRight() {

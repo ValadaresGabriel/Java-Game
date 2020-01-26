@@ -40,6 +40,13 @@ public class Collision {
                 tiles[fourthTestX + (fourthTestY * World.WIDTH)] instanceof Solid);
     }
 
+    public static boolean isEnemyCollidingPlayer(Enemy cEnemy) {
+        Rectangle enemy = new Rectangle(cEnemy.getX(), cEnemy.getY(), World.TILE_SIZE - 3, World.TILE_SIZE);
+        Rectangle player = new Rectangle(Game.getPlayer().getX(), Game.getPlayer().getY(), World.TILE_SIZE - 3, World.TILE_SIZE);
+
+        return enemy.intersects(player);
+    }
+
     public static boolean isEnemyFree(Enemy cEnemy, int x, int y) {
         Rectangle currentEnemy = new Rectangle(x, y, World.TILE_SIZE, World.TILE_SIZE);
 

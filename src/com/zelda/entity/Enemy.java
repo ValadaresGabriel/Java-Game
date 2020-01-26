@@ -3,6 +3,7 @@ package com.zelda.entity;
 import com.zelda.engine.Camera;
 import com.zelda.engine.Collision;
 import com.zelda.engine.Game;
+import com.zelda.entity.stats.EnemyStats;
 import com.zelda.world.World;
 
 import java.awt.*;
@@ -30,8 +31,12 @@ public class Enemy extends Avatar {
 
     private int animationLength;
 
+    private EnemyStats enemyStats;
+
     public Enemy(int x, int y, int width, int height, BufferedImage sprite) {
         super(x, y, width, height, sprite);
+
+        this.enemyStats = new EnemyStats(sprite);
 
         this.rightEnemy = new ArrayList<>();
         this.leftEnemy = new ArrayList<>();
@@ -52,26 +57,30 @@ public class Enemy extends Avatar {
         int thirdCollision = getY() + MOVEMENT_SPEED;
         int fourthCollision = getY() - MOVEMENT_SPEED;
 
-        if (getX() < Game.getPlayer().getX() && Collision.isFree(firstCollision, getY()) &&
-                Collision.isEnemyFree(this, firstCollision, getY())) {
-            this.x += MOVEMENT_SPEED;
-            this.right = true;
-            this.left = false;
-            this.lastDirection = this.rightEnemy.get(0);
-        } else if (getX() > Game.getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&
-                Collision.isEnemyFree(this, secondCollision, getY())) {
-            this.x -= MOVEMENT_SPEED;
-            this.right = false;
-            this.left = true;
-            this.lastDirection = this.leftEnemy.get(0);
-        }
+        if (!Collision.isEnemyCollidingPlayer(this)) {
+            if (getX() < Game.getPlayer().getX() && Collision.isFree(firstCollision, getY()) &&
+                    Collision.isEnemyFree(this, firstCollision, getY())) {
+                this.x += MOVEMENT_SPEED;
+                this.right = true;
+                this.left = false;
+                this.lastDirection = this.rightEnemy.get(0);
+            } else if (getX() > Game.getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&
+                    Collision.isEnemyFree(this, secondCollision, getY())) {
+                this.x -= MOVEMENT_SPEED;
+                this.right = false;
+                this.left = true;
+                this.lastDirection = this.leftEnemy.get(0);
+            }
 
-        if (getY() < Game.getPlayer().getY() && Collision.isFree(getX(), thirdCollision) &&
-                Collision.isEnemyFree(this, getX(), thirdCollision))
-            this.y += MOVEMENT_SPEED;
-        else if (getY() > Game.getPlayer().getY() && Collision.isFree(getX(), fourthCollision) &&
-                Collision.isEnemyFree(this, getX(), fourthCollision))
-            this.y -= MOVEMENT_SPEED;
+            if (getY() < Game.getPlayer().getY() && Collision.isFree(getX(), thirdCollision) &&
+                    Collision.isEnemyFree(this, getX(), thirdCollision))
+                this.y += MOVEMENT_SPEED;
+            else if (getY() > Game.getPlayer().getY() && Collision.isFree(getX(), fourthCollision) &&
+                    Collision.isEnemyFree(this, getX(), fourthCollision))
+                this.y -= MOVEMENT_SPEED;
+        } else {
+            Game.getPlayer().reduceLife(getEnemyStats().getStrength());
+        }
 
         this.delay++;
 
@@ -92,6 +101,10 @@ public class Enemy extends Avatar {
             graphics.drawImage(this.leftEnemy.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
         else
             graphics.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+    }
+
+    private EnemyStats getEnemyStats() {
+        return this.enemyStats;
     }
 
 }
