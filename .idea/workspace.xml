@@ -2,25 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/ItemValidity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/LifePack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zelda/entity/items/Sword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/ItemSpritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/PlayerSpritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/WorldSpritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpritesheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Map_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/SpriteSheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SpriteSheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Collision.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Collision.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/zelda/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Map_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/SpriteSheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/SpriteSheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zelda/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zelda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hope.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Collision.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/engine/Move.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Avatar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/enemies/Enemies.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/items/ItemValidity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/items/LifePack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/items/Sword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/stats/EnemyStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/entity/stats/PlayerStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/panel/MainPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/panel/Ui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/EnemySpritesheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/MapSpritesheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/Spritesheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/spritesheet/WorldSpritesheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/tile/Solid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/tile/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/zelda/world/World.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/zelda/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/zelda/Resume.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/engine/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Avatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/enemies/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/enemies/Enemies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/items/ItemValidity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/items/ItemValidity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/items/LifePack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/items/LifePack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/items/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/items/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/stats/EnemyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/EnemyStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/entity/stats/PlayerStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/PlayerStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/panel/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/panel/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/panel/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/panel/Ui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/spritesheet/EnemySpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/spritesheet/MapSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/spritesheet/Spritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/Spritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/spritesheet/WorldSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/tile/Solid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/tile/Solid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/tile/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zelda/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zelda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hope/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zelda/Resume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hope/Resume.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,19 +91,19 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="zelda.Main" />
-      <module name="Zelda" />
+      <option name="MAIN_CLASS_NAME" value="hope.Main" />
+      <module name="Hope" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zelda.*" />
+          <option name="PATTERN" value="hope.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,30 +188,30 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579405350785" />
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1580061567144">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1580221543589">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580061567144" />
-    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1580061567143">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580221543589" />
+    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1580221543589">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580061567143" />
-    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1580061567143">
+    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580221543589" />
+    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1580221543589">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580061567143" />
-    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1580061567144">
+    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580221543589" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1580221543589">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580061567144" />
-    <state x="157" y="0" key="SettingsEditor" timestamp="1579405457041">
+    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580221543589" />
+    <state x="157" y="0" key="SettingsEditor" timestamp="1580174224526">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="157" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579405457041" />
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1579993575622">
+    <state x="157" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1580174224526" />
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1580081504802">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1579993575622" />
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1580081504802" />
     <state x="65" y="5" key="new project wizard" timestamp="1579649652454">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
