@@ -31,7 +31,9 @@ public class Player extends Avatar {
 	
 	private List<BufferedImage> leftPlayer;
 
-	private List<BufferedImage> damagedPlayer;
+	private List<BufferedImage> damagedRightPlayer;
+
+	private List<BufferedImage> damagedLeftPlayer;
 	
 	private int frame = 0;
 	
@@ -50,12 +52,14 @@ public class Player extends Avatar {
 		
 		this.rightPlayer = new ArrayList<>();
 		this.leftPlayer = new ArrayList<>();
-		this.damagedPlayer = new ArrayList<>();
+		this.damagedRightPlayer = new ArrayList<>();
+		this.damagedLeftPlayer = new ArrayList<>();
 		
 		for (int i = 0; i < 2; i++) {
-			this.rightPlayer.add(Game.playerSpritesheet.getSprite((i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
-			this.leftPlayer.add(Game.playerSpritesheet.getSprite(World.TILE_SIZE - (i * World.TILE_SIZE), 16, World.TILE_SIZE, World.TILE_SIZE));
-			this.damagedPlayer.add(Game.playerSpritesheet.getSprite(0, (World.TILE_SIZE * 2) + (i * World.TILE_SIZE), World.TILE_SIZE, World.TILE_SIZE));
+			this.rightPlayer.add(Game.playerSpritesheet.getSprite(World.TILE_SIZE * i, 0, World.TILE_SIZE, World.TILE_SIZE));
+			this.leftPlayer.add(Game.playerSpritesheet.getSprite(World.TILE_SIZE - (World.TILE_SIZE * i), 16, World.TILE_SIZE, World.TILE_SIZE));
+			this.damagedRightPlayer.add(Game.playerSpritesheet.getSprite(World.TILE_SIZE * i, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE));
+			this.damagedLeftPlayer.add(Game.playerSpritesheet.getSprite(World.TILE_SIZE * i, World.TILE_SIZE * 3, World.TILE_SIZE, World.TILE_SIZE));
 		}
 		
 		this.lastDirection = this.rightPlayer.get(0);
@@ -138,6 +142,14 @@ public class Player extends Avatar {
 		return this.left;
 	}
 
+	public boolean isUp() {
+		return this.up;
+	}
+
+	public boolean isDown() {
+		return this.down;
+	}
+
 	public void setLife(double life) {
 		this.life = life;
 	}
@@ -170,6 +182,10 @@ public class Player extends Avatar {
 					graphics.drawImage(this.rightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 				else if (isLeft())
 					graphics.drawImage(this.leftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
+				else if (this.lastDirection.equals(this.rightPlayer.get(0)) && (isUp() || isDown()))
+					graphics.drawImage(this.rightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
+				else if (this.lastDirection.equals(this.leftPlayer.get(0)) && (isUp() || isDown()))
+					graphics.drawImage(this.leftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 				else
 					graphics.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
 			} else {
@@ -177,9 +193,9 @@ public class Player extends Avatar {
 			}
 		} else {
 			if (this.lastDirection.equals(this.rightPlayer.get(0)))
-				graphics.drawImage(this.damagedPlayer.get(0), getX() - Camera.x, getY() - Camera.y, null);
+				graphics.drawImage(this.damagedRightPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 			else
-				graphics.drawImage(this.damagedPlayer.get(1), getX() - Camera.x, getY() - Camera.y, null);
+				graphics.drawImage(this.damagedLeftPlayer.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
 		}
 	}
 
