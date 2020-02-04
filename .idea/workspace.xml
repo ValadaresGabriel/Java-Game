@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/bin/Prontera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/engine/Events.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/inventory/Inventory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/items/InitializeItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/stats/Stats.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/map/MapSetting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/com/hope/map/tile/Solid.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/ItemSpriteSheet.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/res/Prontera.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/hope/entity/inventory/Inventory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/hope/entity/items/InitializeItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/Stats.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/hope/map/MapSetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpriteSheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ItemSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ItemSpritesheet.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Map_1.png" afterDir="false" />
@@ -31,9 +44,9 @@
       <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/PlayerSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/PlayerSpritesheet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/WorldSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/WorldSpritesheet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/hope/tile/Solid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/tile/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/hope/tile/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/map/tile/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/hope/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/ItemSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/ItemSpriteSheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ItemSpritesheet.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/res/Map_1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/res/PlayerSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/PlayerSpriteSheet.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/WorldSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/WorldSpriteSheet.png" afterDir="false" />
@@ -52,11 +65,11 @@
       <change beforePath="$PROJECT_DIR$/src/com/hope/entity/stats/EnemyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/EnemyStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/entity/stats/PlayerStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/PlayerStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/panel/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/panel/Ui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpritesheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpritesheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpritesheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpritesheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpritesheet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/tile/Solid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/map/tile/Solid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/map/tile/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/world/World.java" afterDir="false" />
