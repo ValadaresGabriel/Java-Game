@@ -3,9 +3,9 @@ package com.hope.engine;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Move implements KeyListener {
+public class Events implements KeyListener {
 
-    public Move(Game game) {
+    public Events(Game game) {
         game.addKeyListener(this);
     }
 
@@ -24,7 +24,7 @@ public class Move implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent event) {
-        Game.getPlayer().isMoving = false;
+        Game.getPlayer().setMoving(false);
         if (event.getKeyCode() == KeyEvent.VK_RIGHT)
             Game.getPlayer().setRight(false);
         else if (event.getKeyCode() == KeyEvent.VK_LEFT)

@@ -3,8 +3,8 @@ package com.hope.engine;
 import com.hope.entity.Enemy;
 import com.hope.entity.Item;
 import com.hope.entity.items.ItemValidity;
-import com.hope.tile.Solid;
-import com.hope.tile.Tile;
+import com.hope.map.tile.Solid;
+import com.hope.map.tile.Tile;
 import com.hope.world.World;
 
 import java.awt.*;
@@ -12,7 +12,15 @@ import java.awt.*;
 public class Collision {
 
     private static boolean simulate(int length) {
-        return length >= Game.world.getTiles().length || length <= 0;
+        return length >= Game.world.getTiles().length || length < 0;
+    }
+
+    private static boolean simulateX(int length) {
+        return length > World.WIDTH - 1 || length < 0;
+    }
+
+    private static boolean simulateY(int length) {
+        return length > World.HEIGHT - 1;
     }
 
     public static boolean isFree(int x, int y) {
@@ -34,6 +42,12 @@ public class Collision {
                 simulate(secondTestX + (secondTestY * World.WIDTH)) ||
                 simulate(thirdTestX + (thirdTestY * World.WIDTH)) ||
                 simulate(fourthTestX + (fourthTestY * World.WIDTH)))
+            return false;
+
+        if (simulateX(firstTestX) || simulateX(secondTestX) || simulateX(thirdTestX) || simulateX(fourthTestX))
+            return false;
+
+        if (simulateY(firstTestY) || simulateY(secondTestY) || simulateY(thirdTestY) || simulateY(fourthTestY))
             return false;
 
         return !(tiles[firstTestX + (firstTestY * World.WIDTH)] instanceof Solid ||

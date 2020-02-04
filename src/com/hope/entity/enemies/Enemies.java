@@ -15,8 +15,8 @@ public class Enemies {
         BufferedImage enemy = null;
 
         switch (mapSource) {
-            case "/Map_1.png" -> enemy = ZENO;
-            case "/Map_2.pnh" -> enemy = ZENO2;
+            case "Prontera" -> enemy = ZENO;
+            case "Map_2" -> enemy = ZENO2;
         }
 
         return enemy;

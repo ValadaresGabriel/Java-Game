@@ -14,6 +14,14 @@ public class Avatar {
 	protected int width;
 	
 	protected int height;
+
+	protected boolean right;
+
+	protected boolean left;
+
+	protected int frame = 0;
+
+	protected int delay = 0;
 	
 	private BufferedImage sprite;
 	
@@ -51,6 +59,38 @@ public class Avatar {
 	
 	private void setSprite(BufferedImage sprite) {
 		this.sprite = sprite;
+	}
+
+	public boolean isRight() {
+		return this.right;
+	}
+
+	public boolean isLeft() {
+		return this.left;
+	}
+
+	protected void setRight(boolean right) {
+		this.right = right;
+	}
+
+	protected void setLeft(boolean left) {
+		this.left = left;
+	}
+
+	protected void resetDelay() {
+		this.delay = 0;
+	}
+
+	protected void resetFrame() {
+		this.frame = 0;
+	}
+
+	public int getDelay() {
+		return this.delay;
+	}
+
+	public int getFrame() {
+		return frame;
 	}
 	
 	public int getX() {

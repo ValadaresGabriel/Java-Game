@@ -4,15 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.hope.panel.MainPanel;
 import com.hope.panel.Ui;
-import com.hope.spritesheet.EnemySpritesheet;
-import com.hope.spritesheet.ItemSpritesheet;
-import com.hope.spritesheet.PlayerSpritesheet;
-import com.hope.spritesheet.WorldSpritesheet;
+import com.hope.spritesheet.EnemySpriteSheet;
+import com.hope.spritesheet.ItemSpriteSheet;
+import com.hope.spritesheet.PlayerSpriteSheet;
+import com.hope.spritesheet.WorldSpriteSheet;
 import com.hope.world.World;
 import com.hope.entity.*;
 
@@ -28,34 +26,34 @@ public class Game extends MainPanel implements Runnable {
 	
 	public static Player player;
 
-	public static ItemSpritesheet itemSpritesheet;
+	public static ItemSpriteSheet itemSpritesheet;
 
-	public static WorldSpritesheet worldSpritesheet;
+	public static WorldSpriteSheet worldSpritesheet;
 
-	public static PlayerSpritesheet playerSpritesheet;
+	public static PlayerSpriteSheet playerSpritesheet;
 
-	public static EnemySpritesheet enemySpritesheet;
+	public static EnemySpriteSheet enemySpritesheet;
 
 	private Ui ui;
 	
 	public static World world;
 	
 	public Game() {
-		new Move(this);
+		new Events(this);
 
 		this.image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 
-		itemSpritesheet = new ItemSpritesheet("/ItemSpritesheet.png");
+		itemSpritesheet = new ItemSpriteSheet("/ItemSpriteSheet.png");
 
-		worldSpritesheet = new WorldSpritesheet("/WorldSpritesheet.png");
+		worldSpritesheet = new WorldSpriteSheet("/WorldSpriteSheet.png");
 
-		playerSpritesheet = new PlayerSpritesheet("/PlayerSpritesheet.png");
+		playerSpritesheet = new PlayerSpriteSheet("/PlayerSpriteSheet.png");
 
 		player = new Player(World.TILE_SIZE * 2, World.TILE_SIZE * 2, World.TILE_SIZE, World.TILE_SIZE, worldSpritesheet.getSprite(0, 0, World.TILE_SIZE, World.TILE_SIZE));
 
-		enemySpritesheet = new EnemySpritesheet("/EnemySpriteSheet.png");
+		enemySpritesheet = new EnemySpriteSheet("/EnemySpriteSheet.png");
 
-		world = new World("/Map_1.png");
+		world = new World("/Prontera.png");
 
 		this.ui = new Ui();
 		
@@ -117,8 +115,8 @@ public class Game extends MainPanel implements Runnable {
 	public void run() {
 		requestFocus();
 		long lastTime = System.nanoTime();
-		final long nano = 1000000000;
-		final double FPS = 60.0; //FPS setado
+		final long nano = 1000000000; //1 billion
+		final double FPS = 60.0; //FPS fixed
 		double ns = nano / FPS;
 		double delta = 0;
 

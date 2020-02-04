@@ -4,13 +4,11 @@ import com.hope.entity.enemies.Enemies;
 
 import java.awt.image.BufferedImage;
 
-public class EnemyStats {
+public class EnemyStats extends Stats {
 
-    private double life;
+    private boolean boss;
 
-    private double mana;
-
-    private int strength;
+    private int maxLifeWidth;
 
     public EnemyStats(BufferedImage enemy) {
         if (Enemies.ZENO.equals(enemy))
@@ -18,33 +16,30 @@ public class EnemyStats {
     }
 
     private void zeno() {
+        setBoss(false);
         setLife(50);
+        setMaxLife(50);
+        setMaxLifeWidth(10);
         setMana(100);
+        setMaxMana(100);
+        setMaxManaWidth(10);
         setStrength(10);
     }
 
-    private void setLife(double life) {
-        this.life = life;
+    private void setBoss(boolean boss) {
+        this.boss = boss;
     }
 
-    private void setMana(double mana) {
-        this.mana = mana;
+    private void setMaxLifeWidth(int maxLifeWidth) {
+        this.maxLifeWidth = maxLifeWidth;
     }
 
-    private void setStrength(int strength) {
-        this.strength = strength;
+    public boolean isBoss() {
+        return boss;
     }
 
-    public double getLife() {
-        return this.life;
-    }
-
-    public double getMana() {
-        return this.mana;
-    }
-
-    public int getStrength() {
-        return this.strength;
+    public int getMaxLifeWidth() {
+        return this.maxLifeWidth;
     }
 
 }

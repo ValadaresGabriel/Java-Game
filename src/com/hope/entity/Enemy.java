@@ -21,19 +21,11 @@ public class Enemy extends Avatar {
 
     private BufferedImage lastDirection;
 
-    private boolean right;
-
-    private boolean left;
-
-    private int frame = 0;
-
-    private int delay = 0;
-
     private int animationLength;
 
     private EnemyStats enemyStats;
 
-    private static final Player player = Game.getPlayer();
+    private final Player player = Game.getPlayer();
 
     public Enemy(int x, int y, int width, int height, BufferedImage sprite) {
         super(x, y, width, height, sprite);
@@ -43,11 +35,10 @@ public class Enemy extends Avatar {
         this.rightEnemy = new ArrayList<>();
         this.leftEnemy = new ArrayList<>();
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++) {
             this.rightEnemy.add(Game.enemySpritesheet.getSprite((i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
-
-        for (int i = 0; i < 2; i++)
             this.leftEnemy.add(Game.enemySpritesheet.getSprite(World.TILE_SIZE * 2 + (i * World.TILE_SIZE), 0, World.TILE_SIZE, World.TILE_SIZE));
+        }
 
         this.animationLength = this.rightEnemy.size();
     }
@@ -60,49 +51,125 @@ public class Enemy extends Avatar {
         int fourthCollision = getY() - MOVEMENT_SPEED;
 
         if (!Collision.isEnemyCollidingPlayer(this)) {
-            if (getX() < Game.getPlayer().getX() && Collision.isFree(firstCollision, getY()) &&
+            if (getX() < getPlayer().getX() && Collision.isFree(firstCollision, getY()) &&
                     Collision.isEnemyFree(this, firstCollision, getY())) {
                 this.x += MOVEMENT_SPEED;
-                this.right = true;
-                this.left = false;
-                this.lastDirection = this.rightEnemy.get(0);
-            } else if (getX() > Game.getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&
+                setRight(true);
+                setLeft(false);
+                setLastDirection(this.rightEnemy.get(0));
+            } else if (getX() > getPlayer().getX() && Collision.isFree(secondCollision, getY()) &&
                     Collision.isEnemyFree(this, secondCollision, getY())) {
                 this.x -= MOVEMENT_SPEED;
-                this.right = false;
-                this.left = true;
-                this.lastDirection = this.leftEnemy.get(0);
+                setRight(false);
+                setLeft(true);
+                setLastDirection(this.leftEnemy.get(0));
             }
 
-            if (getY() < Game.getPlayer().getY() && Collision.isFree(getX(), thirdCollision) &&
+            if (getY() < getPlayer().getY() && Collision.isFree(getX(), thirdCollision) &&
                     Collision.isEnemyFree(this, getX(), thirdCollision))
                 this.y += MOVEMENT_SPEED;
-            else if (getY() > Game.getPlayer().getY() && Collision.isFree(getX(), fourthCollision) &&
+            else if (getY() > getPlayer().getY() && Collision.isFree(getX(), fourthCollision) &&
                     Collision.isEnemyFree(this, getX(), fourthCollision))
                 this.y -= MOVEMENT_SPEED;
         } else {
-            player.reduceLife(getEnemyStats().getStrength());
+            getPlayer().reduceLife(getEnemyStats().getStrength());
         }
 
+        movingAnimation();
+    }
+
+    private void movingAnimation() {
         this.delay++;
 
-        if (this.delay == 7) {
-            this.delay = 0;
+        if (getDelay() == 7) {
+            resetDelay();
             this.frame++;
         }
 
-        if (this.frame == this.animationLength)
-            this.frame = 0;
+        if (getFrame() == getAnimationLength())
+            resetFrame();
+    }
+
+    public int getAnimationLength() {
+        return this.animationLength;
+    }
+
+    private void setLastDirection(BufferedImage lastDirection) {
+        this.lastDirection = lastDirection;
+    }
+
+    private List<BufferedImage> getRightEnemy() {
+        return this.rightEnemy;
+    }
+
+    private List<BufferedImage> getLeftEnemy() {
+        return this.leftEnemy;
+    }
+
+    private BufferedImage getLastDirection() {
+        return this.lastDirection;
+    }
+
+    private Player getPlayer() {
+        return this.player;
+    }
+
+    private void getEnemyHp(Graphics graphics) {
+        int maxLifeWidth = getEnemyStats().getMaxLifeWidth();
+        int lifeWidth = (int) ((getEnemyStats().getLife() / getEnemyStats().getMaxLife()) * maxLifeWidth);
+
+        int maxManaWidth = getEnemyStats().getMaxManaWidth();
+        int manaWidth = (int) ((getEnemyStats().getMana() / getEnemyStats().getMaxMana()) * maxManaWidth);
+
+        int lifeX;
+        int lifeY;
+
+        int manaX;
+        int manaY;
+
+        int height;
+
+        if (!getEnemyStats().isBoss()) {
+            lifeX = getX() - Camera.x + 3;
+            lifeY = getY() - Camera.y + World.TILE_SIZE + 1;
+
+            manaX = lifeX;
+            manaY = lifeY + 1;
+
+            height = 1;
+        } else {
+            lifeX = (Game.WIDTH - getEnemyStats().getMaxLifeWidth()) / 2;
+            lifeY = 20;
+
+            manaX = (Game.WIDTH - getEnemyStats().getMaxManaWidth()) / 2;
+            manaY = lifeY + 5;
+
+            height = 5;
+        }
+
+        graphics.setColor(Color.black);
+        graphics.fillRect(lifeX, lifeY, maxLifeWidth, height);
+
+        graphics.setColor(Color.green);
+        graphics.fillRect(lifeX, lifeY, lifeWidth, height);
+
+        graphics.setColor(Color.black);
+        graphics.fillRect(manaX, manaY, maxManaWidth, height);
+
+        graphics.setColor(Color.blue);
+        graphics.fillRect(manaX, manaY, manaWidth, height);
     }
 
     @Override
     public void Render(Graphics graphics) {
-        if (this.right)
-            graphics.drawImage(this.rightEnemy.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
-        else if (this.left)
-            graphics.drawImage(this.leftEnemy.get(this.frame), getX() - Camera.x, getY() - Camera.y, null);
+        getEnemyHp(graphics);
+
+        if (isRight())
+            graphics.drawImage(getRightEnemy().get(getFrame()), getX() - Camera.x, getY() - Camera.y, null);
+        else if (isLeft())
+            graphics.drawImage(getLeftEnemy().get(getFrame()), getX() - Camera.x, getY() - Camera.y, null);
         else
-            graphics.drawImage(this.lastDirection, getX() - Camera.x, getY() - Camera.y, null);
+            graphics.drawImage(getLastDirection(), getX() - Camera.x, getY() - Camera.y, null);
     }
 
     private EnemyStats getEnemyStats() {

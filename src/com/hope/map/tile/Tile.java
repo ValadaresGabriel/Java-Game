@@ -1,4 +1,4 @@
-package com.hope.tile;
+package com.hope.map.tile;
 
 import com.hope.engine.Camera;
 import com.hope.engine.Game;
