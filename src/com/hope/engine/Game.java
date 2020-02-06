@@ -83,6 +83,7 @@ public class Game extends MainPanel implements Runnable {
 	}
 	
 	private void Update() {
+		Sound.prontera.loop();
 		switch (gameState) {
 			case 0:
 				getPlayer().Update();
