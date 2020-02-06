@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
+import com.hope.panel.EscMenu;
 import com.hope.panel.MainPanel;
 import com.hope.panel.Ui;
 import com.hope.spritesheet.EnemySpriteSheet;
@@ -21,6 +22,8 @@ public class Game extends MainPanel implements Runnable {
 	private boolean isRunning = true;
 	
 	private Thread thread;
+
+	public static int gameState = 0;
 	
 	private BufferedImage image;
 	
@@ -35,6 +38,8 @@ public class Game extends MainPanel implements Runnable {
 	public static EnemySpriteSheet enemySpritesheet;
 
 	private Ui ui;
+
+	private EscMenu escMenu;
 	
 	public static World world;
 	
@@ -56,6 +61,8 @@ public class Game extends MainPanel implements Runnable {
 		world = new World("/Prontera.png");
 
 		this.ui = new Ui();
+
+		this.escMenu = new EscMenu();
 		
 		Start();
 	}
@@ -76,9 +83,18 @@ public class Game extends MainPanel implements Runnable {
 	}
 	
 	private void Update() {
-		getPlayer().Update();
+		switch (gameState) {
+			case 0:
+				getPlayer().Update();
 
-		for (Enemy enemy : world.getEnemies()) enemy.Update();
+				for (Enemy enemy : world.getEnemies()) enemy.Update();
+				break;
+			case 1:
+				break;
+			case 2:
+				this.escMenu.Update();
+				break;
+		}
 	}
 	
 	private void Render() {
@@ -107,6 +123,10 @@ public class Game extends MainPanel implements Runnable {
 		graphics.dispose();
 		graphics = bufferStrategy.getDrawGraphics();
 		graphics.drawImage(this.image, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
+
+		if (gameState == State.ESC_MENU) {
+			this.escMenu.Render(graphics);
+		}
 		
 		bufferStrategy.show();
 	}

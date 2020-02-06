@@ -2,77 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a17aef3-a5b3-49c0-a3f2-5413b28557a1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/Prontera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/engine/Events.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/inventory/Inventory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/items/InitializeItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/entity/stats/Stats.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/map/MapSetting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/com/hope/map/tile/Solid.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/ItemSpriteSheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Prontera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/entity/inventory/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/entity/items/InitializeItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/Stats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/map/MapSetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpriteSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpriteSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpriteSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpriteSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/engine/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/hope/panel/EscMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ItemSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ItemSpritesheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Map_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Map_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/engine/Collision.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/engine/Collision.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/hope/engine/Events.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/engine/Events.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/hope/engine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/engine/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/engine/Move.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/Avatar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/Avatar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/enemies/Enemies.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/enemies/Enemies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/items/ItemValidity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/items/ItemValidity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/items/LifePack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/items/Sword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/stats/EnemyStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/stats/EnemyStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/entity/stats/PlayerStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/entity/stats/PlayerStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/panel/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/panel/Ui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/EnemySpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/EnemySpritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/ItemSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/ItemSpritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/MapSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/MapSpritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/PlayerSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/PlayerSpritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/spritesheet/WorldSpritesheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/spritesheet/WorldSpritesheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/tile/Solid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/tile/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/map/tile/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/hope/world/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/hope/world/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/ItemSpritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Map_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PlayerSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/PlayerSpriteSheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/WorldSpritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/WorldSpriteSheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/engine/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hope/engine/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Events.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/hope/engine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/engine/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/engine/Events.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/Avatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Avatar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/enemies/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/enemies/Enemies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/items/ItemValidity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/items/ItemValidity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/items/LifePack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/items/Sword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/stats/EnemyStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/EnemyStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/entity/stats/PlayerStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/entity/stats/PlayerStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/panel/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/panel/Ui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/EnemySpritesheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/ItemSpritesheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/MapSpritesheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/PlayerSpritesheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/spritesheet/WorldSpritesheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/tile/Solid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/map/tile/Solid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/map/tile/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/hope/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/hope/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,10 +115,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1580757595842">
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1580953372157">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1580757595842" />
+    <state x="488" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1580953372157" />
     <state x="534" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579405461490">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -207,53 +143,57 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579405350785" />
-    <state width="1323" height="73" key="GridCell.Tab.0.bottom" timestamp="1580764625084">
+    <state width="1323" height="113" key="GridCell.Tab.0.bottom" timestamp="1580958087556">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="73" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580764625084" />
-    <state width="1323" height="73" key="GridCell.Tab.0.center" timestamp="1580764625084">
+    <state width="1323" height="113" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580958087556" />
+    <state width="1323" height="113" key="GridCell.Tab.0.center" timestamp="1580958087556">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="73" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580764625084" />
-    <state width="1323" height="73" key="GridCell.Tab.0.left" timestamp="1580764625084">
+    <state width="1323" height="113" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1580958087556" />
+    <state width="1323" height="113" key="GridCell.Tab.0.left" timestamp="1580958087556">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="73" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580764625084" />
-    <state width="1323" height="73" key="GridCell.Tab.0.right" timestamp="1580764625084">
+    <state width="1323" height="113" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1580958087556" />
+    <state width="1323" height="113" key="GridCell.Tab.0.right" timestamp="1580958087556">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="73" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580764625084" />
-    <state width="1323" height="81" key="GridCell.Tab.1.bottom" timestamp="1580561189421">
+    <state width="1323" height="113" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1580958087556" />
+    <state width="1323" height="104" key="GridCell.Tab.1.bottom" timestamp="1580957242278">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="81" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580561189421" />
-    <state width="1323" height="81" key="GridCell.Tab.1.center" timestamp="1580561189421">
+    <state width="1323" height="104" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1580957242278" />
+    <state width="1323" height="104" key="GridCell.Tab.1.center" timestamp="1580957242278">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="81" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1580561189421" />
-    <state width="1323" height="81" key="GridCell.Tab.1.left" timestamp="1580561189421">
+    <state width="1323" height="104" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1580957242278" />
+    <state width="1323" height="104" key="GridCell.Tab.1.left" timestamp="1580957242278">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="81" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1580561189421" />
-    <state width="1323" height="81" key="GridCell.Tab.1.right" timestamp="1580561189421">
+    <state width="1323" height="104" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1580957242278" />
+    <state width="1323" height="104" key="GridCell.Tab.1.right" timestamp="1580957242278">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="81" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1580561189421" />
+    <state width="1323" height="104" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1580957242278" />
     <state x="157" y="0" key="SettingsEditor" timestamp="1580174224526">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="157" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1580174224526" />
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1580858611489">
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog" timestamp="1580951407548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1580858611489" />
+    <state x="384" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1580951407548" />
     <state x="65" y="5" key="new project wizard" timestamp="1579649652454">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="65" y="5" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1579649652454" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580060661078">
+    <state x="339" y="172" key="run.anything.popup" timestamp="1580954154201">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1580060661078" />
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1580954154201" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580896675737">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1580896675737" />
   </component>
 </project>
